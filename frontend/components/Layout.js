@@ -19,9 +19,9 @@ const Layout = (props) => {
   const buttonMenu = () => {
     if (props.token != "" && loginName !== "admin") {
       return (
-        <div className={styles.menucontainer}>
+        <div>
           <button
-            className={styles.menubutton}
+            className="pl-5 pr-5 text-xl tracking-[1px] hover:text-orange-200"
             onClick={() => {
               router.push("/");
             }}
@@ -29,7 +29,7 @@ const Layout = (props) => {
             HOME
           </button>
           <button
-            className={styles.menubutton}
+            className="pl-5 pr-5 text-xl tracking-[1px] hover:text-orange-200"
             onClick={() => {
               router.push("/reserve");
             }}
@@ -37,7 +37,7 @@ const Layout = (props) => {
             RESERVING
           </button>
           <button
-            className={styles.menubutton}
+            className="pl-5 pr-5 text-xl tracking-[1px] hover:text-orange-200"
             onClick={() => {
               api
                 .get("/logout", { withCredentials: true })
@@ -57,9 +57,9 @@ const Layout = (props) => {
       );
     } else if (props.token != "" && loginName === "admin") {
       return (
-        <div className={styles.menucontainer}>
+        <div>
           <button
-            className={styles.menubutton}
+            className="pl-5 pr-5 text-xl tracking-[1px] hover:text-orange-200"
             onClick={() => {
               router.push("/");
             }}
@@ -67,7 +67,7 @@ const Layout = (props) => {
             HOME
           </button>
           <button
-            className={styles.menubutton}
+            className="pl-5 pr-5 text-xl tracking-[1px] hover:text-orange-200"
             onClick={() => {
               router.push("/reserve");
             }}
@@ -75,7 +75,7 @@ const Layout = (props) => {
             RESERVING
           </button>
           <button
-            className={styles.menubutton}
+            className="pl-5 pr-5 text-xl tracking-[1px] hover:text-orange-200"
             onClick={() => {
               router.push("/adminpage");
             }}
@@ -83,7 +83,7 @@ const Layout = (props) => {
             ADMIN
           </button>
           <button
-            className={styles.menubutton}
+            className="pl-5 pr-5 text-xl tracking-[1px] hover:text-orange-200"
             onClick={() => {
               api
                 .get("/logout", { withCredentials: true })
@@ -103,9 +103,9 @@ const Layout = (props) => {
       );
     } else {
       return (
-        <div className={styles.menucontainer}>
+        <div>
           <button
-            className={styles.menubutton}
+            className="pl-5 pr-5 text-xl tracking-[1px] hover:text-orange-200"
             onClick={() => {
               router.push("/");
             }}
@@ -113,7 +113,7 @@ const Layout = (props) => {
             HOME
           </button>
           <button
-            className={styles.menubutton}
+            className="pl-5 pr-5 text-xl tracking-[1px] hover:text-orange-200"
             onClick={() => {
               router.push("/reserve");
             }}
@@ -121,7 +121,7 @@ const Layout = (props) => {
             RESERVING
           </button>
           <button
-            className={styles.menubutton}
+            className="pl-5 pr-5 font-sans text-xl tracking-[1px] hover:text-orange-200"
             onClick={() => {
               router.push("/login");
             }}

@@ -44,14 +44,14 @@ const Home = ({ token }) => {
         >
           THAI CRAFT BEER
         </p>
-        <button
+        {/* <button
           onClick={() => {
             router.push("/reserve");
           }}
           className="bg-green-600 p-3 text-white font-bold text-xl rounded-lg mt-10"
         >
           Knowledge Base
-        </button>
+        </button> */}
       </div>
     </Layout>
   );
