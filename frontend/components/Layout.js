@@ -10,14 +10,11 @@ const api = axios.create({
 const Layout = (props) => {
   const [loginName, setLoginName] = useState("");
   const router = useRouter();
-  // let userName = localStorage.getItem("user");
-  // console.log("username : ", userName);
   useEffect(() => {
     setLoginName(localStorage.getItem("user"));
-    console.log(loginName);
   });
   const buttonMenu = () => {
-    if (props.token != "" && loginName !== "admin") {
+    if (props.token != "") {
       return (
         <div>
           <button
@@ -31,56 +28,18 @@ const Layout = (props) => {
           <button
             className="pl-5 pr-5 text-xl tracking-[1px] hover:text-orange-200"
             onClick={() => {
-              router.push("/reserve");
+              router.push("/about");
             }}
           >
-            RESERVING
+            ABOUT
           </button>
           <button
             className="pl-5 pr-5 text-xl tracking-[1px] hover:text-orange-200"
             onClick={() => {
-              api
-                .get("/logout", { withCredentials: true })
-                .then((res) => {
-                  console.log(res);
-                  window.location.reload();
-                  localStorage.removeItem("user");
-                })
-                .catch((error) => {
-                  console.log(error);
-                });
+              router.push("/knowledge");
             }}
           >
-            LOGOUT
-          </button>
-        </div>
-      );
-    } else if (props.token != "" && loginName === "admin") {
-      return (
-        <div>
-          <button
-            className="pl-5 pr-5 text-xl tracking-[1px] hover:text-orange-200"
-            onClick={() => {
-              router.push("/");
-            }}
-          >
-            HOME
-          </button>
-          <button
-            className="pl-5 pr-5 text-xl tracking-[1px] hover:text-orange-200"
-            onClick={() => {
-              router.push("/reserve");
-            }}
-          >
-            RESERVING
-          </button>
-          <button
-            className="pl-5 pr-5 text-xl tracking-[1px] hover:text-orange-200"
-            onClick={() => {
-              router.push("/adminpage");
-            }}
-          >
-            ADMIN
+            KNOWLEDGES
           </button>
           <button
             className="pl-5 pr-5 text-xl tracking-[1px] hover:text-orange-200"
@@ -115,10 +74,18 @@ const Layout = (props) => {
           <button
             className="pl-5 pr-5 text-xl tracking-[1px] hover:text-orange-200"
             onClick={() => {
-              router.push("/reserve");
+              router.push("/about");
             }}
           >
-            RESERVING
+            ABOUT
+          </button>
+          <button
+            className="pl-5 pr-5 text-xl tracking-[1px] hover:text-orange-200"
+            onClick={() => {
+              router.push("/knowledge");
+            }}
+          >
+            KNOWLEDGES
           </button>
           <button
             className="pl-5 pr-5 font-sans text-xl tracking-[1px] hover:text-orange-200"
@@ -137,6 +104,9 @@ const Layout = (props) => {
       <Head>
         <title>THAI CRAFT BEER</title>
         <link rel="icon" href="/favicon.ico" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,200;0,600;1,400&display=swap" rel="stylesheet" />
       </Head>
 
       <main className={styles.main}>
